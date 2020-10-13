@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         ),
         migrations.RenameField(
             model_name='mlrequest',
-            old_name='created_at',
+            old_name='created_on',
             new_name='created_on',
         ),
     ]

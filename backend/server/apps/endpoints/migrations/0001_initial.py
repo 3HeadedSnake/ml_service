@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
                 ('full_response', models.CharField(max_length=10000)),
                 ('response', models.CharField(max_length=10000)),
                 ('feedback', models.CharField(blank=True, max_length=10000, null=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('created_on', models.DateTimeField(auto_now_add=True)),
                 ('parent_mlalgorithm', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='endpoints.mlalgorithm')),
             ],
         ),
