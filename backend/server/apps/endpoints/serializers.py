@@ -7,7 +7,7 @@ from .models import MLRequest
 class EndpointSerializer(serializers.ModelSerializer):
     class Meta:
         model = Endpoint
-        read_only_fields = ("id", "name", "owner", "created_at")
+        read_only_fields = ("id", "name", "owner", "created_on")
         fields = read_only_fields
 
 class MLAlgorithmSerializer(serializers.ModelSerializer):
