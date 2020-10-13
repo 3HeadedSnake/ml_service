@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Keep information about our endpoints
 class Endpoint(models.Model):
     name = models.CharField(max_length=128)
@@ -22,7 +23,7 @@ class MLAlgorithmStatus(models.Model):
     active = models.BooleanField()
     created_by =  models.CharField(max_length=128)
     created_on =  models.DateTimeField(auto_now_add=True, blank=True)
-    parent_mlalogirthm = models.ForeignKey(MLAlgorithm, on_delete=models.CASCADE, related_name='status')
+    parent_mlalgorithm = models.ForeignKey(MLAlgorithm, on_delete=models.CASCADE, related_name='status')
 
 #To keep information about all requests to ML algorithms
 class MLRequest(models.Model):
@@ -30,5 +31,5 @@ class MLRequest(models.Model):
     full_response = models.CharField(max_length=10000)
     response = models.CharField(max_length=10000)
     feedback = models.CharField(max_length=10000, blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True, blank=True)
     parent_mlalgorithm = models.ForeignKey(MLAlgorithm, on_delete=models.CASCADE)
