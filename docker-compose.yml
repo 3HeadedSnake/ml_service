@@ -13,10 +13,11 @@ services:
         build:
             context: .
             dockerfile: ./docker/backend/Dockerfile
-        entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+        entrypoint: ["bash","/app/docker/backend/wsgi-entrypoint.sh"]
         volumes:
             - static_volume:/app/backend/server/static
         expose:
             - 8000
 volumes:
     static_volume: {}
+
